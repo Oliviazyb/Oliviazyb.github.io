@@ -111,6 +111,14 @@
       </li>
 
       <li class="bold">
+        <a aria-label="Navigate to the Places Travelled section" href="#places"
+          class="waves-effect waves-dark light-blue-text">
+          <i class="mdi-maps-place small"></i>
+          <span>Places Travelled</span>
+        </a>
+      </li>
+
+      <li class="bold">
         <!-- 
         1. mdi-communication-contacts
         2. mdi-content-mail
@@ -174,6 +182,14 @@
         <a aria-label="Navigate to the Education section" href="#education"
           class="waves-effect waves-dark light-blue-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Places Travelled section" href="#places"
+          class="waves-effect waves-dark light-blue-text">
+          <i class="mdi-maps-place small"></i>
+          <span>Places Travelled</span>
+        </a>
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Contact section" href="#contact"
@@ -745,7 +761,107 @@
       </div>
     </section>
 
-    <!-- Seventh Section: Contact -->
+    <!-- Seventh Section: Places Travelled -->
+    <section id="places" class="section scrollspy">
+      <h3 class="page-title light-blue-theme">
+        Places Travelled
+      </h3>
+
+      <div class="container">
+        <div class="card travel-card">
+          <div class="card-content">
+
+            <!-- Places Visited -->
+            <h4 class="travel-heading">Places I Have Visited</h4>
+
+            <div class="travel-gallery">
+              <figure>
+                <img
+                  src="https://images.unsplash.com/flagged/photo-1552553030-837c9c2b0fac?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                  alt="The Great Wall of China">
+                <figcaption>China</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                  alt="New York City skyline">
+                <figcaption>United States</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                  alt="Natural landscape in Iceland">
+                <figcaption>Iceland</figcaption>
+              </figure>
+            </div>
+
+            <!-- Travel Wishlist -->
+            <h4 class="travel-heading">Places I Would Like to Visit</h4>
+
+            <div class="travel-gallery travel-gallery-two">
+              <figure>
+                <img
+                  src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                  alt="The Eiffel Tower in Paris">
+                <figcaption>France</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                  alt="Big Ben in London">
+                <figcaption>England</figcaption>
+              </figure>
+            </div>
+
+            <!-- Map Buttons -->
+            <h4 class="travel-heading">Explore the Map</h4>
+
+            <div class="place-buttons">
+              <button type="button" class="place-button active" data-location="China" data-zoom="4" aria-pressed="true">
+                China
+              </button>
+
+              <button type="button" class="place-button" data-location="United States" data-zoom="4"
+                aria-pressed="false">
+                United States
+              </button>
+
+              <button type="button" class="place-button" data-location="Iceland" data-zoom="6" aria-pressed="false">
+                Iceland
+              </button>
+
+              <button type="button" class="place-button" data-location="France" data-zoom="5" aria-pressed="false">
+                France
+              </button>
+
+              <button type="button" class="place-button" data-location="England, United Kingdom" data-zoom="6"
+                aria-pressed="false">
+                England
+              </button>
+            </div>
+
+            <!-- Selected Location -->
+            <h5 id="selected-place">
+              Currently showing: China
+            </h5>
+
+            <!-- Interactive Google Map -->
+            <div class="map-container">
+              <iframe id="travel-map" src="https://www.google.com/maps?q=China&amp;z=4&amp;output=embed&amp;hl=en"
+                title="Google map showing China" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eighth Section: Contact -->
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text light-blue-theme">Contact</h3>
       <div class="container">
@@ -812,6 +928,37 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+  </script>
+  <script>
+    const placeButtons = document.querySelectorAll(".place-button");
+    const travelMap = document.getElementById("travel-map");
+    const selectedPlace = document.getElementById("selected-place");
+
+    placeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const location = button.dataset.location;
+        const zoom = button.dataset.zoom;
+
+        const mapURL =
+          "https://www.google.com/maps?q=" +
+          encodeURIComponent(location) +
+          "&z=" +
+          zoom +
+          "&output=embed&hl=en";
+
+        travelMap.src = mapURL;
+        travelMap.title = "Google map showing " + location;
+        selectedPlace.textContent = "Currently showing: " + button.textContent.trim();
+
+        placeButtons.forEach((item) => {
+          item.classList.remove("active");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+      });
+    });
   </script>
 </body>
 

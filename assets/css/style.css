@@ -711,3 +711,132 @@ small {
     background-position-x: 30%;
   }
 }
+
+/* Places Travelled */
+.travel-card {
+  margin-bottom: 40px;
+}
+
+.travel-heading {
+  color: #0d47a1;
+  font-weight: 700;
+  margin: 25px 0 15px;
+}
+
+.place-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.place-button {
+  padding: 10px 18px;
+  color: #1565c0;
+  background-color: #ffffff;
+  border: 2px solid #90caf9;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.place-button:hover,
+.place-button:focus {
+  color: #ffffff;
+  background-color: #42a5f5;
+  border-color: #42a5f5;
+}
+
+.place-button.active {
+  color: #ffffff;
+  background-color: #1565c0;
+  border-color: #1565c0;
+}
+
+#selected-place {
+  color: #0d47a1;
+  font-weight: 700;
+  margin: 30px 0 15px;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border: 3px solid #90caf9;
+  border-radius: 8px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .map-container {
+    height: 320px;
+  }
+
+  .place-button {
+    flex-grow: 1;
+  }
+}
+
+.travel-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 15px 0 35px;
+}
+
+.travel-gallery-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.travel-gallery figure {
+  position: relative;
+  height: 200px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(13, 71, 161, 0.18);
+}
+
+.travel-gallery img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.travel-gallery figure:hover img {
+  transform: scale(1.04);
+}
+
+.travel-gallery figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 25px 12px 10px;
+  color: #ffffff;
+  background: linear-gradient(transparent,
+      rgba(0, 0, 0, 0.75));
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+
+  .travel-gallery,
+  .travel-gallery-two {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-gallery figure {
+    height: 220px;
+  }
+}
