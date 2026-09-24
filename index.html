@@ -54,11 +54,13 @@
 </head>
 
 <body>
+  <!-- Activity 6: Dark-mode toggle -->
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Enable dark mode" aria-pressed="false">
+    <i id="theme-toggle-icon" class="fa fa-moon-o" aria-hidden="true">
+    </i>
 
-  <!-- Google Tag Manager (noscript) -->
-  <!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>-->
+    <span id="theme-toggle-text">Dark Mode</span>
+  </button>
 
   <!-- Navigation Menu-->
   <!-- Nav class 1 -->
@@ -939,6 +941,82 @@
     // Initially display only two projects.
     displayMoreProjects();
   </script>
+
+  <!-- Activity 6: Dark-mode functionality -->
+  <script>
+    const themeToggle =
+      document.getElementById("theme-toggle");
+
+    const themeToggleIcon =
+      document.getElementById("theme-toggle-icon");
+
+    const themeToggleText =
+      document.getElementById("theme-toggle-text");
+
+    const themeColorMeta =
+      document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(useDarkMode) {
+      document.body.classList.toggle(
+        "dark-mode",
+        useDarkMode
+      );
+
+      themeToggle.setAttribute(
+        "aria-pressed",
+        String(useDarkMode)
+      );
+
+      if (useDarkMode) {
+        themeToggleIcon.className = "fa fa-sun-o";
+        themeToggleText.textContent = "Light Mode";
+        themeToggle.setAttribute(
+          "aria-label",
+          "Enable light mode"
+        );
+
+        if (themeColorMeta) {
+          themeColorMeta.setAttribute(
+            "content",
+            "#0f172a"
+          );
+        }
+      } else {
+        themeToggleIcon.className = "fa fa-moon-o";
+        themeToggleText.textContent = "Dark Mode";
+        themeToggle.setAttribute(
+          "aria-label",
+          "Enable dark mode"
+        );
+
+        if (themeColorMeta) {
+          themeColorMeta.setAttribute(
+            "content",
+            "#90caf9"
+          );
+        }
+      }
+    }
+
+    // Restore the previously selected theme.
+    const savedTheme =
+      localStorage.getItem("portfolio-theme");
+
+    applyTheme(savedTheme === "dark");
+
+    themeToggle.addEventListener("click", () => {
+      const useDarkMode =
+        !document.body.classList.contains("dark-mode");
+
+      applyTheme(useDarkMode);
+
+      localStorage.setItem(
+        "portfolio-theme",
+        useDarkMode ? "dark" : "light"
+      );
+    });
+  </script>
+
 </body>
 
 </html>
