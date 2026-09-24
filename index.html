@@ -331,210 +331,20 @@
 
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text light-blue-theme">Projects</h3>
+      <h3 class="page-title light-blue-theme">
+        Projects
+      </h3>
+
       <div class="container">
-        <div class="row">
+        <!-- Project cards will be generated dynamically with JavaScript -->
+        <div id="projects-container" class="row" aria-live="polite">
+        </div>
 
-          <!-- AI Strategic Roadmap Platform -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                  alt="Team planning a strategic roadmap" style="height: 100%; width: 100%; object-fit: cover;">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator light-blue-text hoverline">
-                  AI Strategic Roadmap
-                  <i class="mdi-navigation-more-vert right"></i>
-                </span>
-                <p>
-                  An AI-assisted platform for creating, reviewing, and visualizing strategic roadmaps.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text">
-                  <small>Project Details</small>
-                  <i class="mdi-navigation-close right"></i>
-                </span>
-                <ul>
-                  <li>Guides users from current-state analysis to future-state planning, themes, epics, and summary.
-                  </li>
-                  <li>Provides AI-assisted content generation and review while identifying AI-generated text.</li>
-                  <li>Supports role-based workflows, roadmap visualization, and document export.</li>
-                  <li><b>Tools:</b> Next.js, React, Python, FastAPI, MongoDB, Azure OpenAI</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- RAG-Based AI Assistant -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                  alt="Computer circuit board representing artificial intelligence"
-                  style="height: 100%; width: 100%; object-fit: cover;">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator light-blue-text hoverline">
-                  RAG-Based AI Assistant
-                  <i class="mdi-navigation-more-vert right"></i>
-                </span>
-                <p>
-                  An enterprise assistant that retrieves relevant information before generating responses.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text">
-                  <small>Project Details</small>
-                  <i class="mdi-navigation-close right"></i>
-                </span>
-                <ul>
-                  <li>Built document upload, extraction, retrieval, chat, reset, and response-review workflows.</li>
-                  <li>Supported PDF, Word, text, and Markdown documents, including content stored in tables.</li>
-                  <li>Improved the relevance and quality of responses by grounding generation in retrieved information.
-                  </li>
-                  <li><b>Tools:</b> Python, FastAPI, Azure OpenAI, MongoDB</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- DE1-SoC Sokoban Game -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                  alt="Retro gaming equipment representing the Sokoban game"
-                  style="height: 100%; width: 100%; object-fit: cover;">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator light-blue-text hoverline">
-                  DE1-SoC Sokoban Game
-                  <i class="mdi-navigation-more-vert right"></i>
-                </span>
-                <p>
-                  A hardware-based box-pushing game with VGA graphics, audio, and keyboard controls.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text">
-                  <small>Project Details</small>
-                  <i class="mdi-navigation-close right"></i>
-                </span>
-                <ul>
-                  <li>Implemented VGA graphics with double buffering for smooth visual updates.</li>
-                  <li>Integrated PS/2 keyboard input, audio playback, player movement, and multiple difficulty levels.
-                  </li>
-                  <li>Designed game states and transitions using a finite-state machine.</li>
-                  <li><b>Tools:</b> Verilog, DE1-SoC FPGA, VGA, PS/2, FSM</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- MergeLens -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                  src="https://images.unsplash.com/photo-1769865563021-8792ccf279e4?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                  alt="People collaborating on digital photo editing"
-                  style="height: 100%; width: 100%; object-fit: cover;">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator light-blue-text hoverline">
-                  MergeLens
-                  <i class="mdi-navigation-more-vert right"></i>
-                </span>
-                <p>
-                  A collaborative platform for privately editing and approving appearances in shared photos.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text">
-                  <small>Project Details</small>
-                  <i class="mdi-navigation-close right"></i>
-                </span>
-                <ul>
-                  <li>Uses a Git-inspired workflow to manage individual edits and merge approved changes.</li>
-                  <li>Allows each participant to claim and edit only their own face in a group photo.</li>
-                  <li>Incorporates privacy, access-control, consent, and version-management requirements.</li>
-                  <li><b>Tools:</b> React, JavaScript, HTML, CSS, Git</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image Classification -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                  src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                  alt="Camera representing image classification" style="height: 100%; width: 100%; object-fit: cover;">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator light-blue-text hoverline">
-                  Image Classification
-                  <i class="mdi-navigation-more-vert right"></i>
-                </span>
-                <p>
-                  A deep-learning project comparing a custom CNN with VGG19 transfer learning.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text">
-                  <small>Project Details</small>
-                  <i class="mdi-navigation-close right"></i>
-                </span>
-                <ul>
-                  <li>Prepared and trained models using a dataset containing more than 3,000 images.</li>
-                  <li>Compared a custom CNN baseline with a transfer-learning model based on VGG19.</li>
-                  <li>Evaluated validation, test, and real-world performance to identify generalization limitations.
-                  </li>
-                  <li><b>Tools:</b> Python, PyTorch, CNN, VGG19</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Full-Stack Loyalty Program -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                  alt="Customer using a digital shopping and loyalty service"
-                  style="height: 100%; width: 100%; object-fit: cover;">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator light-blue-text hoverline">
-                  Loyalty Program
-                  <i class="mdi-navigation-more-vert right"></i>
-                </span>
-                <p>
-                  A full-stack, role-based loyalty platform for transactions, promotions, and events.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text">
-                  <small>Project Details</small>
-                  <i class="mdi-navigation-close right"></i>
-                </span>
-                <ul>
-                  <li>Supported cashier, manager, superuser, organizer, and customer workflows.</li>
-                  <li>Implemented REST APIs, JWT authentication, password hashing, and role-based permissions.</li>
-                  <li>Created seeded users, transactions, events, and promotions for realistic testing.</li>
-                  <li><b>Tools:</b> React, Vite, Express, Prisma, SQLite, JWT, bcrypt</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
+        <!-- Loads the remaining projects without refreshing the page -->
+        <div class="center-align">
+          <button id="load-more-projects" type="button" class="load-more-button">
+            Load More
+          </button>
         </div>
       </div>
     </section>
@@ -959,6 +769,175 @@
         button.setAttribute("aria-pressed", "true");
       });
     });
+  </script>
+
+  <script>
+    // Activity 5: Dynamic project information
+    const projects = [
+      {
+        title: "AI Strategic Roadmap",
+        image:
+          "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+        alt: "Team planning a strategic roadmap",
+        summary:
+          "An AI-assisted platform for creating, reviewing, and visualizing strategic roadmaps.",
+        details: [
+          "Guides users from current-state analysis to future-state planning, themes, epics, and summaries.",
+          "Provides AI-assisted content generation and review.",
+          "Supports role-based workflows, roadmap visualization, and document export."
+        ],
+        tools: "Next.js, React, Python, FastAPI, MongoDB, Azure OpenAI"
+      },
+      {
+        title: "RAG-Based AI Assistant",
+        image:
+          "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+        alt: "Computer circuit board representing artificial intelligence",
+        summary:
+          "An enterprise assistant that retrieves relevant information before generating responses.",
+        details: [
+          "Built document upload, extraction, retrieval, chat, reset, and review workflows.",
+          "Supported PDF, Word, text, and Markdown files.",
+          "Grounded generated answers in retrieved enterprise information."
+        ],
+        tools: "Python, FastAPI, Azure OpenAI, MongoDB"
+      },
+      {
+        title: "DE1-SoC Sokoban Game",
+        image:
+          "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80",
+        alt: "Gaming equipment representing the Sokoban game",
+        summary:
+          "A hardware-based box-pushing game with VGA graphics, audio, and keyboard controls.",
+        details: [
+          "Implemented VGA graphics with double buffering.",
+          "Integrated PS/2 keyboard input and audio playback.",
+          "Created multiple difficulty levels using a finite-state machine."
+        ],
+        tools: "Verilog, DE1-SoC FPGA, VGA, PS/2, FSM"
+      },
+      {
+        title: "MergeLens",
+        image:
+          "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80",
+        alt: "People collaborating on a digital project",
+        summary:
+          "A collaborative platform for privately editing and approving appearances in shared photos.",
+        details: [
+          "Uses a Git-inspired workflow to manage individual photo edits.",
+          "Allows participants to edit and approve their own appearance.",
+          "Incorporates privacy, consent, access control, and version management."
+        ],
+        tools: "React, JavaScript, HTML, CSS, Git"
+      },
+      {
+        title: "Image Classification",
+        image:
+          "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80",
+        alt: "Camera representing image classification",
+        summary:
+          "A deep-learning project comparing a custom CNN with VGG19 transfer learning.",
+        details: [
+          "Prepared a dataset containing more than 3,000 images.",
+          "Compared a custom CNN with a VGG19 transfer-learning model.",
+          "Evaluated validation, test, and real-world performance."
+        ],
+        tools: "Python, PyTorch, CNN, VGG19"
+      },
+      {
+        title: "Full-Stack Loyalty Program",
+        image:
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
+        alt: "Customer using a digital shopping service",
+        summary:
+          "A role-based loyalty platform for transactions, promotions, and events.",
+        details: [
+          "Supported cashier, manager, superuser, organizer, and customer workflows.",
+          "Implemented REST APIs, authentication, and role-based permissions.",
+          "Created realistic seeded users, transactions, events, and promotions."
+        ],
+        tools: "React, Vite, Express, Prisma, SQLite, JWT, bcrypt"
+      }
+    ];
+
+    const projectsContainer =
+      document.getElementById("projects-container");
+
+    const loadMoreButton =
+      document.getElementById("load-more-projects");
+
+    const projectsPerLoad = 2;
+    let displayedProjectCount = 0;
+
+    function createProjectCard(project) {
+      const detailItems = project.details
+        .map((detail) => `<li>${detail}</li>`)
+        .join("");
+
+      return `
+      <div class="col s12 m6 l4">
+        <div class="card medium project-card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img
+              class="activator"
+              src="${project.image}"
+              alt="${project.alt}">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator light-blue-text hoverline">
+              ${project.title}
+              <i class="mdi-navigation-more-vert right"></i>
+            </span>
+
+            <p>${project.summary}</p>
+          </div>
+
+          <div class="card-reveal">
+            <span class="card-title light-blue-text">
+              <small>Project Details</small>
+              ${project.title}
+              <i class="mdi-navigation-close right"></i>
+            </span>
+
+            <ul>
+              ${detailItems}
+              <li><b>Tools:</b> ${project.tools}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+    }
+
+    function displayMoreProjects() {
+      const nextProjects = projects.slice(
+        displayedProjectCount,
+        displayedProjectCount + projectsPerLoad
+      );
+
+      nextProjects.forEach((project) => {
+        projectsContainer.insertAdjacentHTML(
+          "beforeend",
+          createProjectCard(project)
+        );
+      });
+
+      displayedProjectCount += nextProjects.length;
+
+      // Hide the button after every project is displayed.
+      if (displayedProjectCount >= projects.length) {
+        loadMoreButton.style.display = "none";
+      }
+    }
+
+    loadMoreButton.addEventListener(
+      "click",
+      displayMoreProjects
+    );
+
+    // Initially display only two projects.
+    displayMoreProjects();
   </script>
 </body>
 
